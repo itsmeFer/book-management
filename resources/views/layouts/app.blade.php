@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'My Application')</title>
-    <!-- Include CSS and other head elements -->
+    <!-- Include CSS file -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    @yield('styles') <!-- Placeholder for additional styles in specific views -->
+    <!-- Placeholder for additional styles -->
+    @yield('styles')
 </head>
 <body>
     <header>
+        <!-- Navbar -->
         <nav>
             <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
@@ -20,7 +23,8 @@
     </header>
 
     <main>
-        @yield('content') <!-- This will be replaced by content from specific views -->
+        <!-- Main content from specific views -->
+        @yield('content')
     </main>
 
     <footer>
@@ -29,6 +33,7 @@
 
     <!-- Include JS files -->
     <script src="{{ asset('js/app.js') }}"></script>
-    @yield('scripts') <!-- Placeholder for additional scripts in specific views -->
+    <!-- Placeholder for additional scripts -->
+    @yield('scripts')
 </body>
 </html>
