@@ -3,7 +3,7 @@
 @section('title', 'Welcome to MyApp')
 
 @section('content')
-<div class="jumbotron text-center bg-primary text-white">
+<div class="jumbotron text-center bg-primary text-white animate__animated animate__fadeIn">
     <h1 class="display-4">Welcome to MyApp</h1>
     <p class="lead">Your one-stop solution for managing your books and more!</p>
     <a class="btn btn-light btn-lg mt-3" href="{{ route('books.index') }}" role="button">View Books</a>
@@ -12,7 +12,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-4">
-            <div class="card">
+            <div class="card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
                 <img src="https://via.placeholder.com/150" class="card-img-top" alt="Book Image">
                 <div class="card-body">
                     <h5 class="card-title">Manage Your Books</h5>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
+            <div class="card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
                 <img src="https://via.placeholder.com/150" class="card-img-top" alt="Statistics Image">
                 <div class="card-body">
                     <h5 class="card-title">Track Your Statistics</h5>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
+            <div class="card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
                 <img src="https://via.placeholder.com/150" class="card-img-top" alt="Support Image">
                 <div class="card-body">
                     <h5 class="card-title">Get Support</h5>
