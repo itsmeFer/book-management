@@ -32,6 +32,18 @@
         main {
             margin-top: 70px; /* Sesuaikan dengan tinggi navbar */
         }
+
+        /* Animasi transparansi pada navbar */
+        .navbar {
+            transition: background-color 0.4s ease, opacity 0.4s ease; /* Smooth transition */
+            background-color: rgba(255, 255, 255, 1); /* Set background color default */
+        }
+
+        /* Navbar transparan saat scroll */
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.8); /* Set transparansi */
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -73,5 +85,16 @@
     <!-- Tambahkan Bootstrap JS dan jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tambahkan JavaScript untuk animasi transparansi -->
+    <script>
+        // Mengubah navbar menjadi transparan saat scroll
+        $(window).on('scroll', function() {
+            if ($(this).scrollTop() > 50) { // Jika scroll lebih dari 50px
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
