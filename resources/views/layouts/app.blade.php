@@ -27,11 +27,16 @@
             border-color: #dc3545;
             transition: all 0.3s ease-in-out;
         }
+
+        /* Tambahkan margin-top untuk konten utama agar tidak tertutup navbar */
+        main {
+            margin-top: 70px; /* Sesuaikan dengan tinggi navbar */
+        }
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid d-flex justify-content-between">
                 <!-- Judul di Kiri -->
                 <a class="navbar-brand" href="{{ route('home') }}">MyApp</a>
