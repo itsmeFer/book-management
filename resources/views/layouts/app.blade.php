@@ -51,7 +51,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid d-flex justify-content-between">
                 <!-- Judul di Kiri -->
-                <a class="navbar-brand" href="{{ route('home') }}">MyApp</a>
+                <a class="navbar-brand" href="{{ route('home') }}">BooksApp</a>
 
                 <!-- Daftar (ul, li) di Tengah -->
                 <div class="collapse navbar-collapse justify-content-center">
