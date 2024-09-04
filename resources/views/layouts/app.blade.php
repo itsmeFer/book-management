@@ -44,6 +44,23 @@
             background-color: rgba(255, 255, 255, 0.8); /* Set transparansi */
             opacity: 0.9;
         }
+
+        /* Gaya footer */
+        footer {
+            background-color: #f8f9fa; /* Warna latar belakang footer */
+            color: #343a40; /* Warna teks footer */
+        }
+
+        /* Gaya untuk link di footer */
+        footer a {
+            color: #343a40;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer a:hover {
+            color: #007bff;
+        }
     </style>
 </head>
 <body>
@@ -51,7 +68,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid d-flex justify-content-between">
                 <!-- Judul di Kiri -->
-                <a class="navbar-brand" href="{{ route('home') }}">BooksApp</a>
+                <a class="navbar-brand" href="{{ route('home') }}">MyApp</a>
 
                 <!-- Daftar (ul, li) di Tengah -->
                 <div class="collapse navbar-collapse justify-content-center">
@@ -78,8 +95,48 @@
         @yield('content')
     </main>
 
-    <footer class="text-center py-4">
-        <p>&copy; {{ date('Y') }} My Application. All rights reserved.</p>
+    <footer class="bg-light text-dark py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Kolom pertama: Tentang Kami -->
+                <div class="col-md-4">
+                    <h5>Tentang Kami</h5>
+                    <p class="small">
+                        My Application adalah platform yang memberikan solusi terbaik untuk manajemen buku. Kami berdedikasi untuk memberikan layanan terbaik bagi pengguna kami.
+                    </p>
+                </div>
+
+                <!-- Kolom kedua: Navigasi -->
+                <div class="col-md-4">
+                    <h5>Navigasi</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('books.index') }}">Books</a></li>
+                        <li><a href="{{ route('about') }}">About</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom ketiga: Kontak -->
+                <div class="col-md-4">
+                    <h5>Kontak Kami</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope"></i> email@example.com</li>
+                        <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Example No.123, Jakarta</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Garis Pemisah -->
+            <hr class="my-4">
+
+            <!-- Bagian Hak Cipta -->
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-0 small">&copy; {{ date('Y') }} My Application. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Tambahkan Bootstrap JS dan jQuery -->
@@ -96,5 +153,7 @@
             }
         });
     </script>
+    <!-- Tambahkan FontAwesome untuk ikon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
