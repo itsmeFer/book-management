@@ -16,3 +16,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+use App\Http\Controllers\SuggestionController;
+
+Route::post('/suggestions', [SuggestionController::class, 'store'])->name('suggestions.store');

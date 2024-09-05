@@ -93,6 +93,29 @@
 
     <main class="py-4">
         @yield('content')
+
+        <!-- Form untuk mengirimkan saran -->
+        <div class="container mt-5">
+            <h3>Kirimkan Saran Anda</h3>
+            <form action="{{ route('suggestions.store') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="suggestion">Saran</label>
+                    <textarea class="form-control" id="suggestion" name="suggestion" rows="3" placeholder="Masukkan saran Anda" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Kirim Saran</button>
+            </form>
+        </div>
+
+        @if (session('success'))
+            <div class="alert alert-success mt-3">
+                {{ session('success') }}
+            </div>
+        @endif
     </main>
 
     <footer class="bg-light text-dark py-4">
