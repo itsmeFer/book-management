@@ -61,6 +61,29 @@
         footer a:hover {
             color: #007bff;
         }
+
+        /* Gaya untuk card */
+        .card {
+            border-color: #007bff; /* Border sesuai tema */
+            background-color: #f0f8ff; /* Latar belakang card biru muda */
+        }
+
+        /* Warna header card sesuai tema */
+        .card-header {
+            background-color: #007bff; /* Biru tema */
+            color: #fff; /* Teks putih */
+        }
+
+        /* Warna tombol sesuai tema */
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -96,19 +119,25 @@
 
         <!-- Form untuk mengirimkan saran -->
         <div class="container mt-5">
-            <h3>Kirimkan Saran Anda</h3>
-            <form action="{{ route('suggestions.store') }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <label for="name">Nama</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama Anda" required>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Kirimkan Saran Anda</h3>
                 </div>
-                <div class="form-group">
-                    <label for="suggestion">Saran</label>
-                    <textarea class="form-control" id="suggestion" name="suggestion" rows="3" placeholder="Masukkan saran Anda" required></textarea>
+                <div class="card-body">
+                    <form action="{{ route('suggestions.store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="suggestion">Saran</label>
+                            <textarea class="form-control" id="suggestion" name="suggestion" rows="3" placeholder="Masukkan saran Anda" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Saran</button>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-primary">Kirim Saran</button>
-            </form>
+            </div>
         </div>
 
         @if (session('success'))
@@ -143,9 +172,9 @@
                 <div class="col-md-4">
                     <h5>Kontak Kami</h5>
                     <ul class="list-unstyled">
-                        <li><i class="fas fa-envelope"></i> email@example.com</li>
-                        <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Jl. Example No.123, Jakarta</li>
+                        <li><i class="fas fa-envelope"></i> ferdinandsianturi28@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +6282172892090</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Indonesian</li>
                     </ul>
                 </div>
             </div>
