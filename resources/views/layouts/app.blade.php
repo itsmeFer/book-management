@@ -167,7 +167,19 @@
                         <li><a href="{{ route('about') }}">About</a></li>
                     </ul>
                 </div>
-
+                @if(auth()->user()->favorites->contains($book->id))
+                <form action="{{ route('books.unfavorite', $book->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Hapus dari Favorit</button>
+                </form>
+            @else
+                <form action="{{ route('books.favorite', $book->id) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Tambah ke Favorit</button>
+                </form>
+            @endif
+            
                 <!-- Kolom ketiga: Kontak -->
                 <div class="col-md-4">
                     <h5>Kontak Kami</h5>

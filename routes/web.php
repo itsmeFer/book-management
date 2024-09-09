@@ -19,3 +19,5 @@ Route::get('/about', function () {
 use App\Http\Controllers\SuggestionController;
 
 Route::post('/suggestions', [SuggestionController::class, 'store'])->name('suggestions.store');
+Route::post('/books/{book}/favorite', [FavoriteController::class, 'store'])->name('books.favorite');
+Route::delete('/books/{book}/unfavorite', [FavoriteController::class, 'destroy'])->name('books.unfavorite');
