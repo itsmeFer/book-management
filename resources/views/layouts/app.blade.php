@@ -157,7 +157,7 @@
                         My Application adalah platform yang memberikan solusi terbaik untuk manajemen buku. Kami berdedikasi untuk memberikan layanan terbaik bagi pengguna kami.
                     </p>
                 </div>
-
+    
                 <!-- Kolom kedua: Navigasi -->
                 <div class="col-md-4">
                     <h5>Navigasi</h5>
@@ -167,19 +167,23 @@
                         <li><a href="{{ route('about') }}">About</a></li>
                     </ul>
                 </div>
-                @if(auth()->user()->favorites->contains($book->id))
-                <form action="{{ route('books.unfavorite', $book->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Hapus dari Favorit</button>
-                </form>
-            @else
-                <form action="{{ route('books.favorite', $book->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-primary">Tambah ke Favorit</button>
-                </form>
-            @endif
-            
+    
+                <!-- Logika Favorit -->
+                @auth
+                    @if(auth()->user()->favorites->contains($book->id))
+                        <form action="{{ route('books.unfavorite', $book->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Hapus dari Favorit</button>
+                        </form>
+                    @else
+                        <form action="{{ route('books.favorite', $book->id) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-primary">Tambah ke Favorit</button>
+                        </form>
+                    @endif
+                @endauth
+    
                 <!-- Kolom ketiga: Kontak -->
                 <div class="col-md-4">
                     <h5>Kontak Kami</h5>
@@ -190,10 +194,10 @@
                     </ul>
                 </div>
             </div>
-
+    
             <!-- Garis Pemisah -->
             <hr class="my-4">
-
+    
             <!-- Bagian Hak Cipta -->
             <div class="row">
                 <div class="col text-center">
@@ -202,6 +206,7 @@
             </div>
         </div>
     </footer>
+    
 
     <!-- Tambahkan Bootstrap JS dan jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

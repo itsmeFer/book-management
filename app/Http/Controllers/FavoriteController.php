@@ -18,4 +18,10 @@ class FavoriteController extends Controller
         auth()->user()->favorites()->detach($book->id);
         return redirect()->back()->with('success', 'Buku dihapus dari favorit!');
     }
+    public function index()
+{
+    $favorites = auth()->user()->favorites;
+    return view('wishlist', compact('favorites'));
+}
+
 }
