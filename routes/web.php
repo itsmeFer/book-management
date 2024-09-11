@@ -23,7 +23,8 @@ Route::post('/books/{book}/favorite', [FavoriteController::class, 'store'])->nam
 Route::delete('/books/{book}/unfavorite', [FavoriteController::class, 'destroy'])->name('books.unfavorite');
 Route::get('/wishlist', [FavoriteController::class, 'index'])->name('wishlist');
 Route::middleware(['auth'])->group(function () {
-    Route::post('/books/{book}/favorite', [FavoriteController::class, 'store'])->name('books.favorite');
-    Route::delete('/books/{book}/unfavorite', [FavoriteController::class, 'destroy'])->name('books.unfavorite');
-    Route::get('/wishlist', [FavoriteController::class, 'index'])->name('wishlist');
+Route::post('/books/{book}/favorite', [FavoriteController::class, 'store'])->name('books.favorite');
+Route::delete('/books/{book}/unfavorite', [FavoriteController::class, 'destroy'])->name('books.unfavorite');
+Route::get('/wishlist', [FavoriteController::class, 'index'])->name('wishlist');
 });
+Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');

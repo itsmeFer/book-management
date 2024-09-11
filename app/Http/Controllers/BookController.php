@@ -59,10 +59,15 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        // Cari buku berdasarkan ID
+        $book = Book::findOrFail($id);
+    
+        // Tampilkan view detail buku
+        return view('books.show', compact('book'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
