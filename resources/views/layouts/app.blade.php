@@ -102,6 +102,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('books.index') }}">Books</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('books.create') }}" class="btn btn-primary mb-4">Add New Book</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -117,28 +120,7 @@
     <main class="py-4">
         @yield('content')
 
-        <!-- Form untuk mengirimkan saran -->
-        <div class="container mt-5">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Kirimkan Saran Anda</h3>
-                </div>
-                <div class="card-body">
-                    <form action="{{ route('suggestions.store') }}" method="POST">
-                        @csrf
-                        <div class="form-group">
-                            <label for="name">Nama</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama Anda" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="suggestion">Saran</label>
-                            <textarea class="form-control" id="suggestion" name="suggestion" rows="3" placeholder="Masukkan saran Anda" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Kirim Saran</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+       
 
         @if (session('success'))
             <div class="alert alert-success mt-3">

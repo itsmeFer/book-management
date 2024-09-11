@@ -28,3 +28,5 @@ Route::delete('/books/{book}/unfavorite', [FavoriteController::class, 'destroy']
 Route::get('/wishlist', [FavoriteController::class, 'index'])->name('wishlist');
 });
 Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');
+
+Route::resource('books', BookController::class);
